@@ -1,1 +1,13 @@
 <h1><%= @user.name %></h1>
+
+<div>
+  <ul>
+    <% @gymvisits.each do |visit| %>
+      <li>
+        <%= "#{visit.date}: #{visit.calories_burned}" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "Record New Visit", new_user_gymvisit_path(@user.id) %>

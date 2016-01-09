@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create, :show, :edit]
+  resources :users, only: [:new, :create, :show, :edit] do
+    resources :gymvisits, only: [:new, :create]
+  end
 
   namespace :admin do
     resources :users, only: [:index]

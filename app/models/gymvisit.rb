@@ -1,0 +1,3 @@
+class Gymvisit < ActiveRecord::Base
+  belongs_to :user
+end
