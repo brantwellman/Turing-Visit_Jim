@@ -15,6 +15,16 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+
+def login_admin
+  User.create(name: "Jim", email: "jim@fakeaccount.com", password: "jimrules", role: 1)
+
+  visit login_path
+  fill_in "Email", with: "sally@fakeaccount.com"
+  fill_in "Password", with: "sallyisthebest"
+  click_button "Login"
+end
+
 def login_user
   User.create(name: "Sally", email: "sally@fakeaccount.com", password: "sallyisthebest")
 

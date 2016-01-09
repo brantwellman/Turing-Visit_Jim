@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Registered user creates a gym visit" do
+RSpec.feature "Registered user edits a gym visit" do
   scenario "they see the index with their user page with visit info" do
     login_user
     user = User.last
