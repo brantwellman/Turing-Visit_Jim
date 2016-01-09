@@ -5,6 +5,7 @@
     <% @gymvisits.each do |visit| %>
       <li>
         <%= "#{visit.date}: #{visit.calories_burned}" %>
+        <%= link_to "Edit Visit", edit_user_gymvisit_path(@user, visit) %>
       </li>
     <% end %>
   </ul>
