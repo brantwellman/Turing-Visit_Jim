@@ -14,6 +14,16 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+def login_user
+  User.create(name: "Sally", email: "sally@fakeaccount.com", password: "sallyisthebest")
+
+  visit login_path
+  fill_in "Email", with: "sally@fakeaccount.com"
+  fill_in "Password", with: "sallyisthebest"
+  click_button "Login"
+end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

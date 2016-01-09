@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @gymvisits = @user.gymvisits
   end
 
   private

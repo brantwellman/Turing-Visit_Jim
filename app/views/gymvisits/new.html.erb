@@ -1,0 +1,12 @@
+<h1>Record Your Gym Visit:</h1>
+
+<%= form_for([@user, @gymvisit]) do |f| %>
+
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+
+  <%= f.label :calories_burned %>
+  <%= f.text_field :calories_burned %>
+
+  <%= f.submit "Record Visit" %>
+<% end %>
