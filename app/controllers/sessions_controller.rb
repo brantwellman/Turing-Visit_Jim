@@ -8,7 +8,11 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to @user
+      if @user.admin?
+        redirect_to admin_users_path
+      else
+        redirect_to @user
+      end
     else
       flash[:error] = "Invalid email or password."
       render :new
