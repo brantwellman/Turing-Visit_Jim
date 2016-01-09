@@ -2,12 +2,13 @@ require 'rails_helper'
 
 RSpec.feature "Registered users can log into their account" do
   scenario "regular users see the dashboard for their account" do
-    user = User.create(name: "Sally", email: "sally@fakeaccount.com", password: "sallyisthebest")
+    # user = User.create(name: "Sally", email: "sally@fakeaccount.com", password: "sallyisthebest")
+    user = create_list(:user, 1).first
     # extract this to a helper method like "#create_user" or "#create_sally" to use in all the tests
 
     visit login_path
     fill_in "Email", with: user.email
-    fill_in "Password", with: "sallyisthebest"
+    fill_in "Password", with: user.password
     click_button "Login"
 
     expect(page).to have_content user.name
