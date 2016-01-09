@@ -1,10 +1,9 @@
 require 'rails_helper'
 
-RSpec.feature "Registered user edits a gym visit" do
+RSpec.feature "Registered user creates a gym visit" do
   scenario "they see the index with their user page with visit info" do
-    login_user
-    user = User.last
-    create_visit
+    user = create(:user_with_gymvisit)
+    login_user(user)
 
     click_on "Edit Visit"
     fill_in "Calories burned", with: 2000

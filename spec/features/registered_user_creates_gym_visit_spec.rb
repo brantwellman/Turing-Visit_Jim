@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Registered user creates a gym visit" do
   scenario "they see the index with their user page with visit info" do
-    login_user
-    user = User.last
+    user = create(:user)
+    login_user(user)
 
     click_on "Record New Visit"
     fill_in "Date", with: "01/01/2015"
