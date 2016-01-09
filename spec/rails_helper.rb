@@ -24,6 +24,13 @@ def login_user
   click_button "Login"
 end
 
+def create_visit
+  click_on "Record New Visit"
+  fill_in "Date", with: "01/01/2015"
+  fill_in "Calories burned", with: 1500
+  click_on "Record Visit"
+end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
