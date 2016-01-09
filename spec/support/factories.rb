@@ -5,7 +5,7 @@ FactoryGirl.define do
     email
     role 0
 
-      factory :user_wth_gymvisit do
+      factory :user_with_gymvisit do
         gymvisits { create_list(:gymvisit, 1) }
       end
 

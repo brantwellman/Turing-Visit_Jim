@@ -1,5 +1,5 @@
 class GymvisitsController < ApplicationController
-  before_action :set_user, only: [:new, :create, :edit, :update]
+  before_action :set_user, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @gymvisit = @user.gymvisits.new
@@ -17,6 +17,12 @@ class GymvisitsController < ApplicationController
   def update
     @gymvisit = Gymvisit.find(params[:id])
     @gymvisit.update_attributes(gymvisit_params)
+    redirect_to @user
+  end
+
+  def destroy
+    @gymvisit = Gymvisit.find(params[:id])
+    @gymvisit.destroy
     redirect_to @user
   end
 
