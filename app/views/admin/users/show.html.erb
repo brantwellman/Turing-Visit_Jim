@@ -1,0 +1,16 @@
+<h1>Admin Access</h1>
+<h2><%= @user.name %></h2>
+
+<div>
+  <ul>
+    <% @gymvisits.each do |visit| %>
+      <li>
+        <%= "#{visit.date}: #{visit.calories_burned}" %>
+        <%= link_to "Edit Visit", edit_admin_gymvisit_path(visit) %>
+        <%= link_to "Delete Visit", admin_gymvisit_path(visit), method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "Record New Visit", new_user_gymvisit_path(@user.id) %>
