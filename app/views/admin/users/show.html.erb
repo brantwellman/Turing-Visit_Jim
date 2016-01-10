@@ -7,7 +7,7 @@
       <li>
         <%= "#{visit.date}: #{visit.calories_burned}" %>
         <%= link_to "Edit Visit", edit_admin_gymvisit_path(visit) %>
-        <%= link_to "Delete Visit", user_gymvisit_path(@user, visit), method: :delete %>
+        <%= link_to "Delete Visit", admin_gymvisit_path(visit), method: :delete %>
       </li>
     <% end %>
   </ul>

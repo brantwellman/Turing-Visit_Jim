@@ -11,6 +11,12 @@ class Admin::GymvisitsController < Admin::BaseController
     redirect_to admin_user_path(@gymvisit.user)
   end
 
+  def destroy
+    @gymvisit = Gymvisit.find(params[:id])
+    @gymvisit.destroy
+    redirect_to admin_user_path(@gymvisit.user)
+  end
+
   private
 
   def gymvisit_params
