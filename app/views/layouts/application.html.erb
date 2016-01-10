@@ -11,7 +11,9 @@
 <% flash.each do |type, message| %>
   <%= content_tag :div, message, class: "flash-#{type}" %>
 <% end %>
-  
+
+<%= link_to "Logout", logout_path, method: :delete %>
+
 <%= yield %>
 
 </body>
