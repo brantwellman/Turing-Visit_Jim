@@ -8,11 +8,20 @@
 </head>
 <body>
 
-<% flash.each do |type, message| %>
-  <%= content_tag :div, message, class: "flash-#{type}" %>
-<% end %>
+  <% flash.each do |type, message| %>
+    <%= content_tag :div, message, class: "flash-#{type}" %>
+  <% end %>
 
-<%= link_to "Logout", logout_path, method: :delete %>
+  <% if current_user %>
+    <%= link_to "Logout", logout_path, method: :delete %>
+  <% else %>
+    <%= link_to "Login", login_path %><br>
+    <%= link_to "Create new Account", new_user_path %>
+  <% end %>
+
+  <% if current_user.admin? %>
+    <%= link_to "Admin Dashboard", admin_users_path %>
+  <% end %>
 
 <%= yield %>
 
