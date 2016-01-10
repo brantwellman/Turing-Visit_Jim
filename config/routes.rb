@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'sessions#new'
+
   resources :users, only: [:new, :create, :show, :edit] do
     resources :gymvisits, only: [:new, :create, :edit, :update, :destroy]
   end
