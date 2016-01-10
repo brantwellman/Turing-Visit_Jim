@@ -20,7 +20,7 @@ RSpec.feature "Registered user can see points on dashboard" do
 
     click_on "Logout"
     login_user(user)
-    save_and_open_page
+
     expect(page).to have_content("Total Points: 100")
     expect(page).to have_content("Redeemable Points: 100")
     expect(page).to have_content("Used Points: 0")
