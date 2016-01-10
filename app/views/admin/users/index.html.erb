@@ -1,5 +1,5 @@
 <h1>Current Clients:</h1>
 
 <% @users.each do |user| %>
-  <%= user.name %>
+  <%= link_to user.name, admin_user_path(user) %>
 <% end %>

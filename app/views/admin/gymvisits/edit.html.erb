@@ -1,0 +1,15 @@
+<h1>Admin Access</h1>
+
+
+<h2>Edit <%= @user.name %>'s visit</h2>
+
+<%= form_for(@gymvisit, url: admin_gymvisit_path(@gymvisit)) do |f| %>
+
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+
+  <%= f.label :calories_burned %>
+  <%= f.text_field :calories_burned %>
+
+  <%= f.submit "Update Visit" %>
+<% end %>

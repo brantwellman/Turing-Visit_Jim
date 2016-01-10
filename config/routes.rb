@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users, only: [:index]
+    resources :users, only: [:index, :show]
+    resources :gymvisits, only: [:edit, :update]
   end
 
   get '/login', to: 'sessions#new'
