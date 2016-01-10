@@ -1,0 +1,11 @@
+<h1>Assign Points for <%= @user.name %>:</h1>
+
+<%= form_for(@user, url: admin_user_path(@user)) do |f| %>
+  <%= f.label :redeemable_points %>
+  <%= f.text_field :redeemable_points %>
+
+  <!-- <%= f.label :total_points %>
+  <%= f.text_field :total_points %> -->
+
+  <%= f.submit "Submit Points" %>
+<% end %>

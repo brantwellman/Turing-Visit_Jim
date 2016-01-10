@@ -2,6 +2,16 @@
 <h2><%= @user.name %></h2>
 
 <div>
+  <%= link_to "Assign Points", edit_admin_user_path(@user) %>
+</div>
+
+<div class="points">
+  <p>Total Points: <%= @user.total_points %></p>
+  <p>Redeemable Points: <%= @user.redeemable_points %></p>
+  <p>Used Points: <%= @user.used_points %></p>
+</div>
+
+<div>
   <ul>
     <% @gymvisits.each do |visit| %>
       <li>
