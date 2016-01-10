@@ -1,5 +1,11 @@
 <h1><%= @user.name %></h1>
 
+<div class="points">
+  <p>Total Points: <%= @user.total_points %></p>
+  <p>Redeemable Points: <%= @user.redeemable_points %></p>
+  <p>Used Points: <%= @user.used_points %></p>   
+</div>
+
 <div>
   <ul>
     <% @gymvisits.each do |visit| %>
